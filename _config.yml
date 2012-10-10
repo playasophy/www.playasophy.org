@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://www.playasophy.org
+title: Playasophy Camp
+subtitle: Seeking the wisdom of the sand
+author: Playasophy
 simple_search: http://google.com/search
-description:
+description: Playasophy Burning Man Camp Website
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -93,7 +93,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-35494808-1
 
 # Facebook Like
 facebook_like: false
