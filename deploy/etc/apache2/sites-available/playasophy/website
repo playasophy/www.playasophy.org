@@ -1,0 +1,6 @@
+# Virtual Host config for [www.]playasophy.org.
+# vim: ft=apache
+
+<VirtualHost *:80>
+    Include sites-config/playasophy/website.conf
+</VirtualHost>
