@@ -7,6 +7,11 @@ Burning Man is a place for anyone and everyone to share their passions with thei
 In Playasophy Camp, we seek to bring our love of intellectual stimulation to Black Rock City.
 Our goal is to create a melting pot of ideation, where burners can gather and be enriched by each others' minds.
 
+- [Camp Charter](/about/charter): Playasophy Camp is registered in the United States as a non-profit entity.
+- [Camp Policies](/about/policies): More information about Playasophy's rules and expectations of its members.
+- [Camping with us](/about/camping-with-us): Interested in coming to the next Burn with us? This page is for you!
+
+## History
 In August of 2008, a small group of friends drove from Seattle to our first burn.
 Like most playa virgins, we spent that week wide-eyed and gape-jawed.
 By the time our heads stopped spinning a week or two after we got home, we began planning for 2009.
