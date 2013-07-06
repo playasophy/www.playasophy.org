@@ -18,3 +18,7 @@ Our infrastructure was tested to its limits as we worked to be able to support e
 ## [2012](camp/2012)
 Burning Man 2012 (Fertility 2.0) was a good year for Playasophy.
 We were placed at 4:10 & Foxglove across from a camp that loved blasting karaoke at all hours.
+
+## [2013](camp/2013)
+This year we've moved away from talks and incorporated more organic discussions around a hookah lounge.
+We'll serve cool drinks and snacks to our guests while we converse on a wide variety of topics.
