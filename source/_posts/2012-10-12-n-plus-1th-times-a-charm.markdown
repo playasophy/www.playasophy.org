@@ -2,7 +2,7 @@
 layout: post
 title: "N+1th time's a charm"
 date: 2012-10-12 17:31
-author: "Greg Look"
+author: "Greg"
 comments: false
 categories: Website
 ---

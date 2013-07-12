@@ -2,7 +2,7 @@
 layout: post
 title: "It's That Time Again"
 date: 2013-07-06 20:08
-author: "Greg Look"
+author: "Greg"
 comments: false
 categories: 
 ---

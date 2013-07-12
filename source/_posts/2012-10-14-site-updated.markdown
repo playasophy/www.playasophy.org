@@ -2,7 +2,7 @@
 layout: post
 title: "Site updated!"
 date: 2012-10-14 22:27
-author: "Greg Look"
+author: "Greg"
 comments: false
 categories: Website
 ---
