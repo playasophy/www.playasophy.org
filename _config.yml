@@ -29,7 +29,7 @@ email: info@playasophy.org
 root: /
 permalink: /blog/:year/:month/:day/:title
 source: source
-destination: public
+destination: _site
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
