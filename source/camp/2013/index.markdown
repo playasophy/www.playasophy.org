@@ -12,6 +12,6 @@ In addition, the fluid nature allows for a more varied set of topics and viewpoi
 
 Here's a preview of what our camp will look like:
 
-![camp layout - iso](2013/placement/layout-iso.png)
-![camp layout - iso no shade](2013/placement/layout-iso-no-shade.png)
-![camp layout - top](2013/placement/layout-top.png)
+![camp layout - iso](placement/layout-iso.png)
+![camp layout - iso no shade](placement/layout-iso-no-shade.png)
+![camp layout - top](placement/layout-top.png)
