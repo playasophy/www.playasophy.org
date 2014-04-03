@@ -28,7 +28,7 @@ This will make setup much easier on our early arrivals and save costs year-over-
 Today, Geeber and I cut most of the 8' uprights and tested out the design for the first time.
 I'm happy to report that the structure is very solid and a snap to get up even with only two people!
 
-![Cutting shade structure uprights](/camp/2013/photos/shade-structure-cutting.jpg)
-![Testing one shade cell](/camp/2013/photos/shade-structure-test.jpg)
+{% img /media/camp/2013/shade-structure-cutting.jpg Cutting shade structure uprights %}
+{% img /media/camp/2013/shade-structure-test.jpg Testing one shade cell %}
 
 The Man burns in 17 days!

@@ -6,6 +6,7 @@
 _deploy
 _site
 aws-keys.sh
+/media
 node_modules
 sass.old
 source.old

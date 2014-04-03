@@ -6,18 +6,21 @@ $root = ::File.dirname(__FILE__)
 
 class SinatraStaticServer < Sinatra::Base
 
+  # Direct media requests to the media directory.
+  get(/^\/media\/.+/) do
+    path = File.join($root, request.path)
+    File.exist?(path) ? send_file(path) : 404
+  end
+
+  # All other requests are served from compiled site files.
   get(/.+/) do
-    send_sinatra_file(request.path) {404}
+    path = File.join($root, '_site',  request.path)
+    path = File.join(path, 'index.html') unless path =~ /\.[a-z]+$/i
+    File.exist?(path) ? send_file(path) : 404
   end
 
   not_found do
-    send_file(File.join(File.dirname(__FILE__), '_site', '404.html'), {:status => 404})
-  end
-
-  def send_sinatra_file(path, &missing_file_block)
-    file_path = File.join(File.dirname(__FILE__), '_site',  path)
-    file_path = File.join(file_path, 'index.html') unless file_path =~ /\.[a-z]+$/i
-    File.exist?(file_path) ? send_file(file_path) : missing_file_block.call
+    send_file(File.join($root, '_site', '404.html'), {:status => 404})
   end
 
 end
