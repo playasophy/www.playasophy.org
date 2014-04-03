@@ -47,6 +47,30 @@ def list_files(prefix="")
 end
 
 
+# Collects local and S3 media into a combined hash.
+def collect_media(prefix="")
+  media = {}
+
+  s3_media = list_objects(prefix)
+  puts "Found #{s3_media.count} objects"
+  s3_media.each do |object|
+    path = object[:key].slice(6, object[:key].length)
+    media[path] ||= {}
+    media[path][:s3] = object
+  end
+
+  local_media = list_files(prefix)
+  puts "Found #{local_media.count} files"
+  local_media.each do |file|
+    path = file[:path].slice(6, file[:path].length)
+    media[path] ||= {}
+    media[path][:local] = file
+  end
+
+  media
+end
+
+
 namespace :media do
   # Loads S3 configuration from the s3_website settings file and initializes
   # global variables to store an S3 client and the website bucket name.
@@ -58,13 +82,10 @@ namespace :media do
 
   desc "Shows differences between the media available locally and in S3"
   task :diff, [:prefix] => :configure do |t, args|
-    s3_media = list_objects(args[:prefix])
-    puts "Found #{s3_media.count} objects"
-    puts s3_media.inspect
-
-    local_media = list_files(args[:prefix])
-    puts "Found #{local_media.count} files"
-    puts local_media.inspect
+    media = collect_media(args[:prefix])
+    media.keys.sort.each do |path|
+      puts "#{path}\n    #{media[path][:s3].inspect}\n    #{media[path][:local].inspect}"
+    end
   end
 
   desc "Downloads missing media files from S3 for local development"
