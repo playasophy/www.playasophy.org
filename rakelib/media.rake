@@ -123,8 +123,6 @@ namespace :media do
           message = "%-50s S3 only" % path
           puts Paint[message, :red]
       end
-
-      #puts "    #{s3_object.inspect}\n    #{local_file.inspect}"
     end
   end
 
