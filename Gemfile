@@ -19,7 +19,9 @@ end
 
 group :deploy do
   gem 'aws-sdk-core'
+  gem 'mime-types'
   gem 's3_website'
 end
 
 gem 'sinatra', '~> 1.4.2'
+gem 'paint'

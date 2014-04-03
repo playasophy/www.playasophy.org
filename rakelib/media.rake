@@ -2,6 +2,8 @@
 
 require 'aws-sdk-core'
 require 'digest/md5'
+require 'mime/types'
+require 'paint'
 require 'yaml'
 
 
@@ -84,7 +86,45 @@ namespace :media do
   task :diff, [:prefix] => :configure do |t, args|
     media = collect_media(args[:prefix])
     media.keys.sort.each do |path|
-      puts "#{path}\n    #{media[path][:s3].inspect}\n    #{media[path][:local].inspect}"
+      local_file = media[path][:local]
+      s3_object = media[path][:s3]
+
+      # This shouldn't happen.
+      if local_file.nil? && s3_object.nil?
+        raise "Local file and S3 object should not both be nil!"
+
+      # The file is available in both locations.
+      elsif local_file && s3_object
+        etag = s3_object[:etag]
+        etag = etag && etag.slice(1, etag.length - 2)
+
+        # The files' size differs.
+        if local_file[:size] != s3_object[:size]
+          message = "%-50s size mismatch! local: %d bytes / s3: %d bytes" % [path, local_file[:size], s3_object[:size]]
+          puts Paint[message, :yellow]
+
+        # The files' hash differs.
+        elsif local_file[:md5] != etag
+          message = "%-50s hash mismatch! local: %s / s3: %s" % [path, local_file[:md5], etag]
+          puts Paint[message, :yellow]
+
+        # The file matches in both locations.
+        else
+          puts Paint[path, :green]
+        end
+
+      # The file is present locally but not in S3.
+      elsif local_file
+          message = "%-50s local only" % path
+          puts Paint[message, :red]
+
+      # The file is present in S3 but not locally.
+      elsif s3_object
+          message = "%-50s S3 only" % path
+          puts Paint[message, :red]
+      end
+
+      #puts "    #{s3_object.inspect}\n    #{local_file.inspect}"
     end
   end
 
@@ -97,14 +137,22 @@ namespace :media do
 
   desc "Uploads local media files to S3"
   task :push, [:prefix] => :configure do |t, args|
-    s3_media = list_objects(args[:prefix])
-    puts "Found #{s3_media.count} objects"
-    puts s3_media.inspect
+    media = collect_media(args[:prefix])
 
-    local_media = list_files(args[:prefix])
-    puts "Found #{local_media.count} files"
-    puts local_media.inspect
+    media.keys.sort.each do |path|
+      s3_object = media[path][:s3]
+      local_file = media[path][:local]
 
-    # upload each local file not present in bucket
+      if local_file && s3_object.nil?
+        content_type = MIME::Types.type_for(path).first
+        puts "%-50s %10d bytes [%s]" % [path, local_file[:size], content_type]
+        $s3_client.put_object(
+          bucket: $s3_bucket,
+          key: "media/#{path}",
+          body: File.new(local_file[:path]),
+          content_type: content_type && content_type.to_s
+        )
+      end
+    end
   end
 end
