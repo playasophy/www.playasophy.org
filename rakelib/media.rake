@@ -17,10 +17,10 @@ def list_objects(prefix="")
   $s3_client.list_objects(bucket: $s3_bucket, prefix: prefix).each do |resp|
     if block_given?
       resp.contents.each do |object|
-        yield object
+        yield object unless object[:key].end_with? '/'
       end
     else
-      objects.concat(resp.contents)
+      objects.concat(resp.contents.reject{|object| object[:key].end_with? '/' })
     end
   end
   objects unless block_given?
@@ -34,7 +34,7 @@ def list_files(prefix="")
   elsif prefix.end_with? '/'
     "media/#{prefix}**/*"
   else
-    "media/#{prefix}*/**/*"
+    "media/#{prefix}*"
   end
 
   puts "Listing local files matching #{glob}"
