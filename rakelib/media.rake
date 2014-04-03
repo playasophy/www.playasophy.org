@@ -128,11 +128,22 @@ namespace :media do
     end
   end
 
-  desc "Downloads missing media files from S3 for local development"
+  desc "Downloads media files from S3 for local development"
   task :pull, [:prefix] => :configure do |t, args|
-    # list local media files (under prefix)
-    # enumerate media files in bucket (under prefix)
-    # download each remote file not present locally
+    media = collect_media(args[:prefix])
+
+    media.keys.sort.each do |path|
+      s3_object = media[path][:s3]
+      local_file = media[path][:local]
+
+      if s3_object && local_file.nil?
+        puts "%-50s %10d bytes" % [path, s3_object[:size]]
+        target = "media/#{path}"
+        target_dir = File.dirname(target)
+        mkdir_p target_dir unless File.directory? target_dir
+        $s3_client.get_object({bucket: $s3_bucket, key: "media/#{path}"}, target: target)
+      end
+    end
   end
 
   desc "Uploads local media files to S3"
