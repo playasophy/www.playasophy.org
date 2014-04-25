@@ -5,7 +5,6 @@
 .pygments-cache
 _deploy
 _site
-aws-keys.sh
 /media
 node_modules
 sass.old
@@ -13,3 +12,5 @@ source.old
 source/_stash
 source/stylesheets/screen.css
 vendor
+
+aws-rake
