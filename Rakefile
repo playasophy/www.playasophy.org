@@ -236,7 +236,7 @@ end
 ##### DEPLOYMENT #####
 
 desc "Default deploy task"
-task :deploy do
+task :deploy => :generate do
   # Check if preview posts exist, which should not be published
   if File.exists?(".preview-mode")
     puts "## Found posts in preview mode, regenerating files ..."
