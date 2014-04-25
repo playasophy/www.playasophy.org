@@ -16,4 +16,4 @@ Click around the navigation up top to see, but now there are roughly four sectio
 
 I'll continue making updates and filling in content, but in the meantime I give you Playasophy Camp, 2012:
 
-![Camp Photo](/camp/2012/photos/camp_photo.jpg)
+{% img /media/camp/2012/camp_photo.jpg Camp Photo %}

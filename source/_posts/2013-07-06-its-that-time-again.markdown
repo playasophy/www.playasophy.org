@@ -13,6 +13,6 @@ In a departure from our previous burns, we've moved away from long intellectual 
 For more information about our plans, check out the [2013 page](/camp/2013).
 
 Here's a shot of our planned layout:
-![2013 layout](/camp/2013/placement/layout-iso-no-shade.png)
+{% img /media/camp/2013/layout/iso-no-shade.png 2013 layout %}
 
 The man burns in 56 days!
