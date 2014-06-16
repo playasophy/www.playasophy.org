@@ -47,7 +47,7 @@ New to this whole thing? Don’t worry! http://blog.burningman.com/10principles/
 
 As always, you can email Playasophy at info@playasophy.org with any questions, comments, and suggestions.
 
-### )’( Get excited - the man burns in 82 days! )’(
+### )’( Get excited - the man burns in 75 days! )’(
 
 <object width="560" height="315"><param name="movie" value="//www.youtube.com/v/5pUTKNGpu1s?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/5pUTKNGpu1s?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
