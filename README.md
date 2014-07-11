@@ -62,3 +62,12 @@ the `deploy:s3` task:
 ```
 % ./aws-rake deploy:s3
 ```
+
+## TODO
+
+- [ ] Fix links on top nav bar to include 'about' and 'camp'.
+- [x] Merge gallery code.
+- [ ] Resize large images.
+- [ ] Add blocker to uploading new large images to S3.
+- [ ] Add ignore to `s3_website.yml` for package (maven) directory.
+- [ ] Add bitcoin payment button.
