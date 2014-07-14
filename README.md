@@ -83,3 +83,11 @@ the `deploy:s3` task:
 ```
 % ./aws-rake deploy:s3
 ```
+
+## Committing 
+
+```
+git add X
+git commit -m “commit message”
+git push
+```
