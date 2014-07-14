@@ -10,6 +10,27 @@ The website uses the `rake` command-line build tool. This is based on the Ruby
 programming language. The general invocation is `rake <task>`. Use `rake -T` for
 a list of available tasks to run.
 
+### Blog Posting
+
+Open directory.
+
+```bash
+rake -T
+rake new_post’[X]’
+rake preview #will show preview of post in localhost:3003
+```
+
+Open post in `source/_post` and edit/add text.
+
+```bash
+git status   #Will show what is different.
+git add source
+git commit -m “commit message”
+./aws-rake media:diff #Will show what is different in media
+./aws-rake media:push #Will upload new media to S3
+./aws-rake deploy #publishes
+```
+
 ### AWS Credentials
 
 To interact with S3 and deploy the website, you'll need AWS credentials. The
@@ -62,12 +83,3 @@ the `deploy:s3` task:
 ```
 % ./aws-rake deploy:s3
 ```
-
-## TODO
-
-- [ ] Fix links on top nav bar to include 'about' and 'camp'.
-- [x] Merge gallery code.
-- [ ] Resize large images.
-- [ ] Add blocker to uploading new large images to S3.
-- [ ] Add ignore to `s3_website.yml` for package (maven) directory.
-- [ ] Add bitcoin payment button.
