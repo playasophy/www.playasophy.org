@@ -1,0 +1,19 @@
+---
+layout: post
+title: "2014 Placement"
+date: 2014-07-13 19:26:37 -0700
+comments: true
+categories: 
+author: Sabina
+---
+We’ve been placed! 
+
+Last week was a blur of excitement. Our humble camp will call the 3 o’clock plaza home for a very dusty week. A major change from last year’s 4:00 and A address; we’ll all need to pitch in even more to give back to the Playa.
+
+{% img /media/camp/2014/2014-placement-BRC.jpg 2014 camp placement %}
+
+However, with this news comes more responsibility and anxiety. Planning is still under way, and we’re getting closer and closer to a functioning camp every day. 
+
+Check back for more exciting updates soon :)
+
+Sabina
