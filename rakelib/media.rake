@@ -145,7 +145,7 @@ namespace :media do
   end
 
   desc "Uploads local media files to S3"
-  task :push, [:prefix] => :configure do |t, args|
+  task :push, [:prefix, :force] => :configure do |t, args|
     media = collect_media(args[:prefix])
 
     media.keys.sort.each do |path|
@@ -153,14 +153,21 @@ namespace :media do
       local_file = media[path][:local]
 
       if local_file && s3_object.nil?
-        content_type = MIME::Types.type_for(path).first
-        puts "%-50s %10d bytes [%s]" % [path, local_file[:size], content_type]
-        $s3_client.put_object(
-          bucket: $s3_bucket,
-          key: "media/#{path}",
-          body: File.new(local_file[:path]),
-          content_type: content_type && content_type.to_s
-        )
+        file_kb = local_file[:size].to_f/1024
+        if file_kb > 400 && !args[:force]
+          msg = "%-50s %8.1f KB (skipped, too large)" % [File.basename(path), file_kb]
+          puts Paint[msg, :yellow]
+        else
+          content_type = MIME::Types.type_for(path).first
+          msg = "%-50s %8.1f KB (%s)" % [path, file_kb, content_type]
+          puts Paint[msg, :green]
+          $s3_client.put_object(
+            bucket: $s3_bucket,
+            key: "media/#{path}",
+            body: File.new(local_file[:path]),
+            content_type: content_type && content_type.to_s
+          )
+        end
       end
     end
   end
