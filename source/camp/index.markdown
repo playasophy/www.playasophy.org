@@ -22,3 +22,7 @@ We were placed at 4:10 & Foxglove across from a camp that loved blasting karaoke
 ## [2013](/camp/2013/)
 This year we've moved away from talks and incorporated more organic discussions around a hookah lounge.
 We'll serve cool drinks and snacks to our guests while we converse on a wide variety of topics.
+
+## [2014](/camp/2014/)
+The hookah lounge makes a triumphant return to match the Caravansery theme! 3:00
+Plaza placement increases our public exposure even more.
