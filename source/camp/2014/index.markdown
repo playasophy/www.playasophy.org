@@ -14,7 +14,7 @@ challenges with the layout. This year's camp will be narrower and deeper than
 any previous years, and will be even higher traffic than our spot at the corner
 of 4:00 & A was last year!
 
+{% img /media/camp/2014/layout/placed-top.png Top layout view %}
 {% img /media/camp/2014/layout/placed-iso.png Isometric layout view %}
 {% img /media/camp/2014/layout/placed-iso-with-shade.png Isometric view with shade cloth %}
-{% img /media/camp/2014/layout/placed-top.png Top layout view %}
 {% img /media/camp/2014/layout/placed-map.png Map of local blocks %}
