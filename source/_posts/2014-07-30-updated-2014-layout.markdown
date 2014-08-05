@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "updated-2014-layout"
+title: "Updated 2014 layout"
 date: 2014-07-30 14:04:21 -0700
 categories: layout
 ---
