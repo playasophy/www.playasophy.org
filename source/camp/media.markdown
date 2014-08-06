@@ -7,8 +7,8 @@ Members can use this form to upload media for camp playlists.
 
 <form id="upload-form" action="http://www.playasophy.org.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
   <input type="hidden" name="acl" value="public-read"/>
-  <label>File: <input type="file" name="file"/></label><br/>
   <label>Name: <input type="text" name="key" value=""/></label><br/>
+  <label>File: <input type="file" name="file"/></label><br/>
   <input type="submit" name="upload" value="Upload"/>
 </form>
 
