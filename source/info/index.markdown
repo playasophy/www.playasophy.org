@@ -10,3 +10,6 @@ This page contains links to resources and other useful information pages.
 
 ### Projects
 * [WonderDome](wonderdome) 2013 art project
+
+### Camp Recipe Book
+* [Camp Recipe Book](recipe-book) contains camp meal recipes and ideas collected over the years. Add your own to the list!
